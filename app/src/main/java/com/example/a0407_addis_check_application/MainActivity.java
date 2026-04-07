@@ -14,6 +14,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //FrameLayout上面有一個 TextView 16:03 完成 16:06
+        //先做RecyclerView裡面的item 16:12 完成 16:16
     }
 }
