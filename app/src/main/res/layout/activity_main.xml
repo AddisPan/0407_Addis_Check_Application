@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:background="@color/black">
     <LinearLayout
@@ -73,28 +74,33 @@
             android:text="目前尚無實單交易帳號\n請先選擇下列合作券商">
         </TextView>
     </FrameLayout>
-    <LinearLayout
+    <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
-        android:layout_height="122dp"
-        android:orientation="vertical">
-        <TextView
-            android:layout_width="307dp"
-            android:layout_height="16dp"
-            android:textColor="@color/white"
-            android:text="券商名稱">
-        </TextView>
-        <FrameLayout
-            android:layout_width="343dp"
-            android:layout_height="74dp"
-            android:background="#232323"
-            android:layout_marginTop="12.04dp">
-            <ImageView
-                android:layout_width="47dp"
-                android:layout_height="17dp"
-                android:layout_marginTop="48.96dp"
-                android:layout_marginLeft="288dp"
-                android:src="@drawable/ic_launcher_foreground">
-            </ImageView>
-        </FrameLayout>
-    </LinearLayout>
+        android:layout_height="match_parent"
+        tools:itemCount="10">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="122dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="307dp"
+                android:layout_height="16dp"
+                android:textColor="@color/white"
+                android:text="券商名稱">
+            </TextView>
+            <FrameLayout
+                android:layout_width="343dp"
+                android:layout_height="74dp"
+                android:background="#232323"
+                android:layout_marginTop="12.04dp">
+                <ImageView
+                    android:layout_width="47dp"
+                    android:layout_height="17dp"
+                    android:layout_marginTop="48.96dp"
+                    android:layout_marginLeft="288dp"
+                    android:src="@drawable/ic_launcher_foreground">
+                </ImageView>
+            </FrameLayout>
+        </LinearLayout>
+    </androidx.recyclerview.widget.RecyclerView>
 </LinearLayout>
