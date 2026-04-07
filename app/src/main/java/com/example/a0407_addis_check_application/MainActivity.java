@@ -14,5 +14,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        // 策略模式 先顯示在Log上 18:21  完成 18:27
+        StrategyContext mStrategyContext = new StrategyContext();
+        mStrategyContext.chooseStrategy(new Strategy.LinePay());
+        mStrategyContext.pay(100);
+        mStrategyContext.chooseStrategy(new Strategy.ApplePay());
+        mStrategyContext.pay(100);
     }
 }
