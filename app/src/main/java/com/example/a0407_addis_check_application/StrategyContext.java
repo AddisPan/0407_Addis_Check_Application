@@ -7,9 +7,10 @@ public class StrategyContext {
         mPay = pay;
     }
 
-    public void pay(int price) {
+    public String pay(int price) {
         if (mPay != null) {
             mPay.Price(price);
         }
+        return " " + price;
     }
 }
