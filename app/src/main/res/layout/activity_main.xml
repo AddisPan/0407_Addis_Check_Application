@@ -30,4 +30,12 @@
             android:src="@drawable/ic_launcher_foreground">
         </ImageView>
     </LinearLayout>
+    <ImageView
+        android:layout_width="68dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="154dp"
+        android:layout_marginRight="153dp"
+        android:src="@drawable/ic_launcher_foreground">
+    </ImageView>
 </LinearLayout>
