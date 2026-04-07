@@ -33,4 +33,27 @@
             android:src="@mipmap/ic_launcher">
         </ImageView>
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="28dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="180.5dp"
+            android:layout_height="28dp"
+            android:background="#F5D554"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:text="實單交易帳號"
+            android:id="@+id/id_textview_dealaccount">
+        </TextView>
+        <TextView
+            android:layout_width="180.5dp"
+            android:layout_height="28dp"
+            android:background="@color/black"
+            android:gravity="center"
+            android:textColor="#F5D554"
+            android:text="模擬交易帳號"
+            android:id="@+id/id_textview_unreal_dealaccount">
+        </TextView>
+    </LinearLayout>
 </LinearLayout>
