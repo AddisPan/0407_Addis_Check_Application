@@ -4,20 +4,22 @@ import android.util.Log;
 
 public class Factory {
     public abstract static class Food {
-        public abstract void Type();
+        public abstract String Type();
     }
 
     protected static class Corn extends Food {
         @Override
-        public void Type() {
+        public String Type() {
             Log.d("Addis", "玉米罐頭");
+            return "玉米罐頭";
         }
     }
 
     protected static class Fish extends Food {
         @Override
-        public void Type() {
+        public String Type() {
             Log.d("Addis", "紅燒魚罐頭");
+            return "紅燒魚罐頭";
         }
     }
 
