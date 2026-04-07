@@ -1,6 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
-</TextView>
+    <TextView
+        android:layout_width="80dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="50dp"
+        android:background="@android:drawable/btn_default"
+        android:text="顯示時間"
+        android:id="@+id/id_textview_time_button">
+    </TextView>
+    <TextView
+        android:layout_width="80dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="50dp"
+        android:background="@android:drawable/btn_default"
+        android:text=""
+        android:id="@+id/id_textview_time_show">
+    </TextView>
+    <TextView
+        android:layout_width="80dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="50dp"
+        android:background="@android:drawable/btn_default"
+        android:text=""
+        android:id="@+id/id_textview_observerA">
+    </TextView>
+    <TextView
+        android:layout_width="80dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="50dp"
+        android:background="@android:drawable/btn_default"
+        android:text=""
+        android:id="@+id/id_textview_obseverB">
+    </TextView>
+</LinearLayout>

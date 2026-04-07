@@ -20,7 +20,7 @@ public class Observer {
             }
         }
     }
-    private static String update() {
+    public static String update() {
         Log.d("Addis", "更新");
         return "收到更新";
     }
