@@ -14,5 +14,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        // 先做工廠模式(用Log看是否能成功顯示出來) 17:07 完成 17:12
+        Factory.createFood("Corn").Type();
+        Factory.createFood("Fish").Type();
     }
 }
