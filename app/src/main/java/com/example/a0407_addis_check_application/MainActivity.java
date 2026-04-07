@@ -14,6 +14,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        // 輸入證券戶密碼(記住ID) 16:58 完成 17:00
+        // 登入按鈕 17:01 完成 17:02
     }
 }

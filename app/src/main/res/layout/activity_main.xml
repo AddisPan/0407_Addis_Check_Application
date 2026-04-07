@@ -134,4 +134,13 @@
             </TextView>
         </LinearLayout>
     </LinearLayout>
+    <TextView
+        android:layout_width="343dp"
+        android:layout_height="36dp"
+        android:background="#FA960F"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:text="登入">
+    </TextView>
 </LinearLayout>
