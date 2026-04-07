@@ -6,7 +6,9 @@ public class Factory {
     public abstract static class Food {
         public abstract String Type();
     }
-
+    public abstract static class Contanier{
+        public abstract String Type();
+    }
     protected static class Corn extends Food {
         @Override
         public String Type() {
@@ -22,14 +24,44 @@ public class Factory {
             return "紅燒魚罐頭";
         }
     }
-
-    public static Food createFood(String s) {
-        Food mFood = null;
-        if (s.equals("Corn")) {
-            mFood = new Corn();
-        } else if (s.equals("Fish")) {
-            mFood = new Fish();
+    protected static class CircleContainer extends Contanier{
+        @Override
+        public String Type() {
+            Log.d("Addis", "圓形容器");
+            return "圓形容器";
         }
-        return mFood;
+    }
+    protected static class SquareContainer extends Contanier{
+        @Override
+        public String Type() {
+            Log.d("Addis", "方形容器");
+            return "方形容器";
+        }
+    }
+    public abstract static class FoodFactory{
+        public abstract Food createFood();
+        public abstract Contanier createContainer();
+    }
+    public static class CornFactory extends FoodFactory{
+        @Override
+        public Food createFood() {
+            return new Corn();
+        }
+
+        @Override
+        public Contanier createContainer() {
+            return new CircleContainer();
+        }
+    }
+    public static class FishFactory extends FoodFactory{
+        @Override
+        public Food createFood() {
+            return new Fish();
+        }
+
+        @Override
+        public Contanier createContainer() {
+            return new SquareContainer();
+        }
     }
 }
