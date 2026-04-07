@@ -14,5 +14,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        // 先裝飾者模式 一樣Log顯示 18:02 完成 18:11
+        Decorate.Tree mTree = new Decorate.ChrisTree();
+        mTree = new Decorate.LumpChrisTree(mTree);
+        mTree.Type();
+        mTree = new Decorate.LumpBallChrisTree(mTree);
+        mTree.Type();
     }
 }
