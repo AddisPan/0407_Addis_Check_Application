@@ -143,4 +143,11 @@
         android:textColor="@color/black"
         android:text="登入">
     </TextView>
+    <TextView
+        android:layout_width="125dp"
+        android:layout_height="18dp"
+        android:textColor="#FA960F"
+        android:layout_gravity="center"
+        android:text="立即線上開戶>">
+    </TextView>
 </LinearLayout>
