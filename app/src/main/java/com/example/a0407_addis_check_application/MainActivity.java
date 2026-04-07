@@ -14,6 +14,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //兩個TextView 像按鈕 一左一右(左底色 黃 右底色黑) 15:58 完成 16:01
+        //FrameLayout上面有一個 TextView 16:03 完成 16:06
     }
 }
