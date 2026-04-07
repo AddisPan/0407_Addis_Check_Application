@@ -14,6 +14,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        // 中間大圖片(中信) 16:46 完成 16:47
+        // 輸入身分證字號(記住ID) 16:49 完成 16:57
     }
 }
