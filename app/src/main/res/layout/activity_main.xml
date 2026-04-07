@@ -5,6 +5,7 @@
     <TextView
         android:layout_width="100dp"
         android:layout_height="100dp"
+        android:layout_marginTop="50dp"
         android:background="@android:drawable/btn_default"
         android:id="@+id/id_textview_corn"
         android:text="玉米罐頭">
@@ -12,6 +13,7 @@
     <TextView
         android:layout_width="100dp"
         android:layout_height="100dp"
+        android:layout_marginTop="50dp"
         android:background="@android:drawable/btn_default"
         android:id="@+id/id_textview_fish"
         android:text="紅燒魚罐頭">
@@ -19,6 +21,7 @@
     <TextView
         android:layout_width="100dp"
         android:layout_height="100dp"
+        android:layout_marginTop="50dp"
         android:background="@android:drawable/btn_default"
         android:id="@+id/id_textview_show">
     </TextView>
