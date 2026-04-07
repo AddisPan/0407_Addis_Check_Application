@@ -1,6 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
-</TextView>
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@android:drawable/btn_default"
+        android:id="@+id/id_textview_corn"
+        android:text="玉米罐頭">
+    </TextView>
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@android:drawable/btn_default"
+        android:id="@+id/id_textview_fish"
+        android:text="紅燒魚罐頭">
+    </TextView>
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@android:drawable/btn_default"
+        android:id="@+id/id_textview_show">
+    </TextView>
+</LinearLayout>
