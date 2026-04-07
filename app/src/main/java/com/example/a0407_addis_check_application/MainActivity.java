@@ -14,5 +14,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //最上面的 標籤列(左邊 圖片 中間 標題 右邊 圖片) 15:50 完成 15:56
+
     }
 }
