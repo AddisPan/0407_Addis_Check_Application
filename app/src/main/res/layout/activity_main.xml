@@ -77,11 +77,13 @@
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:itemCount="10">
+        tools:itemCount="10"
+        android:id="@+id/id_recyclerview">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="122dp"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:id="@+id/id_linearlayout_recycleritem">
             <TextView
                 android:layout_width="307dp"
                 android:layout_height="16dp"
