@@ -14,5 +14,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        // 先做觀察者模式(用Log顯示) 17:44 完成 17:49
+        Observer.Subject mSubject = new Observer.Subject();
+        Observer mObserverA = new Observer();
+        Observer mObserverB = new Observer();
+        mSubject.add(mObserverA);
+        mSubject.add(mObserverB);
+        mSubject.notifyObservers();
     }
 }
