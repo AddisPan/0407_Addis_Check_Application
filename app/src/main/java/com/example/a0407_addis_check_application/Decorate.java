@@ -3,23 +3,27 @@ package com.example.a0407_addis_check_application;
 import android.util.Log;
 
 public class Decorate {
-    public abstract static class Tree{
+    public abstract static class Tree {
         public abstract String Type();
     }
-    public static class ChrisTree extends Tree{
+
+    public static class ChrisTree extends Tree {
         @Override
         public String Type() {
             Log.d("Addis", "這是一個聖誕樹");
             return "這是一個聖誕樹";
         }
     }
-    public abstract static class DecorateBase extends Tree{
+
+    public abstract static class DecorateBase extends Tree {
         Tree mTree = null;
-        public DecorateBase(Tree tree){
+
+        public DecorateBase(Tree tree) {
             mTree = tree;
         }
     }
-    public static class LumpChrisTree extends DecorateBase{
+
+    public static class LumpChrisTree extends DecorateBase {
         public LumpChrisTree(Tree tree) {
             super(tree);
         }
@@ -31,7 +35,8 @@ public class Decorate {
             return " + 燈泡";
         }
     }
-    public static class LumpBallChrisTree extends DecorateBase{
+
+    public static class LumpBallChrisTree extends DecorateBase {
         public LumpBallChrisTree(Tree tree) {
             super(tree);
         }
