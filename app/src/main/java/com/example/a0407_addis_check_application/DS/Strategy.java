@@ -1,25 +1,19 @@
 package com.example.a0407_addis_check_application.DS;
 
 public class Strategy {
-    public abstract static class StrategyBase{
-        public abstract String calculate();
+    public abstract static class Pay{
+        public abstract String Type();
     }
-    public static class A extends StrategyBase{
+    public static class LinePay extends Pay{
         @Override
-        public String calculate() {
-            return "100";
+        public String Type() {
+            return "LinePay";
         }
     }
-    public static class B extends StrategyBase{
+    public static class ApllePay extends Pay{
         @Override
-        public String calculate() {
-            return "150";
-        }
-    }
-    public static class C extends StrategyBase{
-        @Override
-        public String calculate() {
-            return "200";
+        public String Type() {
+            return "ApllePay";
         }
     }
 }

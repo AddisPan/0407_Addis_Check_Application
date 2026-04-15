@@ -5,20 +5,20 @@ import java.util.List;
 
 public class Observer {
     public static class Subject{
-        private List<Observer> observers = new ArrayList<>();
-        public void addObservers(Observer observer){
-            observers.add(observer);
+        private List<Observer> mObservers = new ArrayList<Observer>();
+        public void add(Observer observer){
+            mObservers.add(observer);
         }
-        public void deleteObservers(Observer observer){
-            observers.remove(observer);
+        public void remove(Observer observer){
+            mObservers.remove(observer);
         }
-        public void notifyObservers(){
-            for(Observer o:observers){
-                o.update();
+        public void notifyObserver(){
+            for (Observer observer : mObservers){
+                observer.update();
             }
         }
     }
     public String update(){
-        return  "Update";
+        return "更新";
     }
 }

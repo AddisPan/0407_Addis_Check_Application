@@ -1,13 +1,12 @@
 package com.example.a0407_addis_check_application.DS;
 
 public class StrategyContext {
-    private Strategy.StrategyBase mStrategyBase = null;
-
-    public void chooseStrategy(Strategy.StrategyBase strategyBase) {
-        mStrategyBase = strategyBase;
+    private Strategy.Pay mPay = null;
+    public void choosePay(Strategy.Pay pay){
+        mPay = pay;
     }
-
-    public String calculate() {
-        return mStrategyBase.calculate();
+    public String Price(){
+        mPay.Type();
+        return "100";
     }
 }

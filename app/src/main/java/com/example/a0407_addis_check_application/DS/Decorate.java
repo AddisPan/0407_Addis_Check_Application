@@ -16,14 +16,15 @@ public class Decorate {
             mTree = tree;
         }
     }
-    public static class LumpChrisMasTree extends DecorateBase{
-        public LumpChrisMasTree(Tree tree) {
+    public static class LumpTree extends DecorateBase{
+        public LumpTree(Tree tree) {
             super(tree);
         }
 
         @Override
         public String Type() {
-            return mTree.Type() + "燈泡";
+            mTree.Type();
+            return " + 燈泡";
         }
     }
 }
