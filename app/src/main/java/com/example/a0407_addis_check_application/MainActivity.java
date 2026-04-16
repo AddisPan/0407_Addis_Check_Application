@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        // 補上工廠模式(因為剛剛把它刪掉) 先將工廠模式的方法加回來 開始 16:30  結束 16:36
+        // 補上工廠模式(因為剛剛把它刪掉) 將隨機生產的地方變回工廠模式 開始 16:39  結束 16:43
         TextView mTextViewLinePay = findViewById(R.id.id_button_line_pay);
         TextView mTextViewApplePay = findViewById(R.id.id_button_apple_pay);
         TextView mTextViewShowPrice = findViewById(R.id.id_show_price);
@@ -32,13 +32,18 @@ public class MainActivity extends AppCompatActivity {
         TextView mTextViewShowToyType = findViewById(R.id.id_show_toy_type);
         TextView mTextViewShowBlindBoxManage = findViewById(R.id.id_show_blind_box_manage);
 
-        // 工廠方法模式生產盲盒 隨機
+//        // 抽象工廠方法模式生產盲盒 隨機
         CommodityFactory.ToyCarPaperBox mToyCarPaperBox = new CommodityFactory.ToyCarPaperBox();
         CommodityFactory.RobotPlasticBox mRobotPlasticBox = new CommodityFactory.RobotPlasticBox();
         CommodityFactory.DollGlassBox mDollGlassBox = new CommodityFactory.DollGlassBox();
-        String mBlindBoxA = mToyCarPaperBox.createToy().Type() + " + " + mToyCarPaperBox.createBox().Type();
-        String mBlindBoxB = mRobotPlasticBox.createToy().Type() + " + " + mRobotPlasticBox.createBox().Type();
-        String mBlindBoxC = mDollGlassBox.createToy().Type() + " + " + mDollGlassBox.createBox().Type();
+//        String mBlindBoxA = mToyCarPaperBox.createToy().Type() + " + " + mToyCarPaperBox.createBox().Type();
+//        String mBlindBoxB = mRobotPlasticBox.createToy().Type() + " + " + mRobotPlasticBox.createBox().Type();
+//        String mBlindBoxC = mDollGlassBox.createToy().Type() + " + " + mDollGlassBox.createBox().Type();
+
+        // 工廠方法模式生產盲盒 隨機
+        String mBlindBoxA = CommodityFactory.createToy("ToyCar").Type() + " + " + CommodityFactory.createBox("Paper").Type();
+        String mBlindBoxB = CommodityFactory.createToy("Robot").Type() + " + " + CommodityFactory.createBox("Plastic").Type();
+        String mBlindBoxC = CommodityFactory.createToy("Doll").Type() + " + " + CommodityFactory.createBox("Glass").Type();
 
         List<String> mBlindBoxManageList = new ArrayList<String>();
         double price = 100;

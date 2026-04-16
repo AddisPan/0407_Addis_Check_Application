@@ -66,7 +66,7 @@ public class CommodityFactory {
     }
 
     //生產
-    public Toy createToy(String s) {
+    public static Toy createToy(String s) {
         Toy mToy = null;
         switch (s) {
             case "ToyCar":
@@ -82,7 +82,7 @@ public class CommodityFactory {
         return mToy;
     }
 
-    public Box createBox(String s) {
+    public static Box createBox(String s) {
         Box mBox = null;
         switch (s) {
             case "Paper":
