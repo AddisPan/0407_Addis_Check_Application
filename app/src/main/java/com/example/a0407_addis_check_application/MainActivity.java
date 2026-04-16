@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        // 使用單例模式，設計一個「盲盒管理元件」，可以把盲盒放進去管理 "使用觀察者模式，註冊兩個觀察者 觀察「盲盒管理元件」的盲盒變化，內容有變化時分別通知 將盲盒中的盒子顯示在「盒子區塊」 將盲盒中的玩具顯示在「玩具區塊」" 先用觀察者模式下去設計 盲盒管理元件就是觀察者模式的 Subject 開始 16:55  結束 17:14
+        // 使用裝飾者模式，在盲盒上裝飾塑膠袋，並將裝飾後的內容顯示在「獲得商品區塊」先設計出裝飾者的雛形 因為裝飾者需要盲盒管理員的盲盒 開始 17:21  結束 17:32
         TextView mTextViewLinePay = findViewById(R.id.id_button_line_pay);
         TextView mTextViewApplePay = findViewById(R.id.id_button_apple_pay);
         TextView mTextViewShowPrice = findViewById(R.id.id_show_price);
@@ -53,6 +53,11 @@ public class MainActivity extends AppCompatActivity {
         mBlindBoxManager.addObservers(mBlindBoxObserverToy);
         mBlindBoxManager.addObservers(mBlindBoxObserverBox);
 
+        // 顯示加塑膠袋
+        BlindBoxDecorate.BlindBoxBase mBlindBoxBase = new BlindBoxDecorate.BlindBox();
+        mBlindBoxBase = new BlindBoxDecorate.PlasticBlindBox(mBlindBoxBase);
+        BlindBoxDecorate.BlindBoxBase finalMBlindBoxBase = mBlindBoxBase;
+
         double price = 100;
         double ApplePayPrice = price * .8;
         ChoosePay mChoosePay = new ChoosePay();
@@ -64,19 +69,19 @@ public class MainActivity extends AppCompatActivity {
             String randomNumber = String.valueOf(new Date().getTime() % 3);
             switch (randomNumber) {
                 case "0":
-                    mTextViewShowCommodity.setText(mBlindBoxA);
+                    mTextViewShowCommodity.setText(mBlindBoxA + finalMBlindBoxBase.Show());
                     mBlindBoxManager.notifyObservers();
                     mTextViewShowBoxType.setText(mBlindBoxObserverBox.acceptUpdate() + " " + mToyCarPaperBox.createBox().Type());
                     mTextViewShowToyType.setText(mBlindBoxObserverToy.acceptUpdate() + " " + mToyCarPaperBox.createToy().Type());
                     break;
                 case "1":
-                    mTextViewShowCommodity.setText(mBlindBoxB);
+                    mTextViewShowCommodity.setText(mBlindBoxB + finalMBlindBoxBase.Show());
                     mBlindBoxManager.notifyObservers();
                     mTextViewShowBoxType.setText(mBlindBoxObserverBox.acceptUpdate() + " " + mRobotPlasticBox.createBox().Type());
                     mTextViewShowToyType.setText(mBlindBoxObserverToy.acceptUpdate() + " " + mRobotPlasticBox.createToy().Type());
                     break;
                 case "2":
-                    mTextViewShowCommodity.setText(mBlindBoxC);
+                    mTextViewShowCommodity.setText(mBlindBoxC + finalMBlindBoxBase.Show());
                     mBlindBoxManager.notifyObservers();
                     mTextViewShowBoxType.setText(mBlindBoxObserverBox.acceptUpdate() + " " + mDollGlassBox.createBox().Type());
                     mTextViewShowToyType.setText(mBlindBoxObserverToy.acceptUpdate() + " " + mDollGlassBox.createToy().Type());
@@ -91,19 +96,19 @@ public class MainActivity extends AppCompatActivity {
             String randomNumber = String.valueOf(new Date().getTime() % 3);
             switch (randomNumber) {
                 case "0":
-                    mTextViewShowCommodity.setText(mBlindBoxA);
+                    mTextViewShowCommodity.setText(mBlindBoxA + finalMBlindBoxBase.Show());
                     mBlindBoxManager.notifyObservers();
                     mTextViewShowBoxType.setText(mBlindBoxObserverBox.acceptUpdate() + " " + mToyCarPaperBox.createBox().Type());
                     mTextViewShowToyType.setText(mBlindBoxObserverToy.acceptUpdate() + " " + mToyCarPaperBox.createToy().Type());
                     break;
                 case "1":
-                    mTextViewShowCommodity.setText(mBlindBoxB);
+                    mTextViewShowCommodity.setText(mBlindBoxB + finalMBlindBoxBase.Show());
                     mBlindBoxManager.notifyObservers();
                     mTextViewShowBoxType.setText(mBlindBoxObserverBox.acceptUpdate() + " " + mRobotPlasticBox.createBox().Type());
                     mTextViewShowToyType.setText(mBlindBoxObserverToy.acceptUpdate() + " " + mRobotPlasticBox.createToy().Type());
                     break;
                 case "2":
-                    mTextViewShowCommodity.setText(mBlindBoxC);
+                    mTextViewShowCommodity.setText(mBlindBoxC + finalMBlindBoxBase.Show());
                     mBlindBoxManager.notifyObservers();
                     mTextViewShowBoxType.setText(mBlindBoxObserverBox.acceptUpdate() + " " + mDollGlassBox.createBox().Type());
                     mTextViewShowToyType.setText(mBlindBoxObserverToy.acceptUpdate() + " " + mDollGlassBox.createToy().Type());
