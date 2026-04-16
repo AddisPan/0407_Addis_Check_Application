@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        // 使用抽象工廠模式，生產盲盒所需材料「玩具」、「玩具盒子」 開始 16:06  結束 16:23
+        // 補上工廠模式(因為剛剛把它刪掉) 先將工廠模式的方法加回來 開始 16:30  結束 16:36
         TextView mTextViewLinePay = findViewById(R.id.id_button_line_pay);
         TextView mTextViewApplePay = findViewById(R.id.id_button_apple_pay);
         TextView mTextViewShowPrice = findViewById(R.id.id_show_price);
@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         TextView mTextViewShowToyType = findViewById(R.id.id_show_toy_type);
         TextView mTextViewShowBlindBoxManage = findViewById(R.id.id_show_blind_box_manage);
 
-        // 抽象工廠方法模式生產盲盒 隨機
+        // 工廠方法模式生產盲盒 隨機
         CommodityFactory.ToyCarPaperBox mToyCarPaperBox = new CommodityFactory.ToyCarPaperBox();
         CommodityFactory.RobotPlasticBox mRobotPlasticBox = new CommodityFactory.RobotPlasticBox();
         CommodityFactory.DollGlassBox mDollGlassBox = new CommodityFactory.DollGlassBox();
@@ -50,18 +50,22 @@ public class MainActivity extends AppCompatActivity {
             mTextViewShowPrice.setText("" + mChoosePay.PayName_Price(price));
 
             String randomNumber = String.valueOf(new Date().getTime() % 3);
-            if (randomNumber.equals("0")) {
-                mTextViewShowCommodity.setText(mBlindBoxA);
-                mTextViewShowBoxType.setText(mToyCarPaperBox.createBox().Type());
-                mTextViewShowToyType.setText(mToyCarPaperBox.createToy().Type());
-            } else if (randomNumber.equals("1")) {
-                mTextViewShowCommodity.setText(mBlindBoxB);
-                mTextViewShowBoxType.setText(mRobotPlasticBox.createBox().Type());
-                mTextViewShowToyType.setText(mRobotPlasticBox.createToy().Type());
-            } else if (randomNumber.equals("2")) {
-                mTextViewShowCommodity.setText(mBlindBoxC);
-                mTextViewShowBoxType.setText(mDollGlassBox.createBox().Type());
-                mTextViewShowToyType.setText(mDollGlassBox.createToy().Type());
+            switch (randomNumber) {
+                case "0":
+                    mTextViewShowCommodity.setText(mBlindBoxA);
+                    mTextViewShowBoxType.setText(mToyCarPaperBox.createBox().Type());
+                    mTextViewShowToyType.setText(mToyCarPaperBox.createToy().Type());
+                    break;
+                case "1":
+                    mTextViewShowCommodity.setText(mBlindBoxB);
+                    mTextViewShowBoxType.setText(mRobotPlasticBox.createBox().Type());
+                    mTextViewShowToyType.setText(mRobotPlasticBox.createToy().Type());
+                    break;
+                case "2":
+                    mTextViewShowCommodity.setText(mBlindBoxC);
+                    mTextViewShowBoxType.setText(mDollGlassBox.createBox().Type());
+                    mTextViewShowToyType.setText(mDollGlassBox.createToy().Type());
+                    break;
             }
 
             mBlindBoxManageList.add(mBlindBoxA);
@@ -73,18 +77,22 @@ public class MainActivity extends AppCompatActivity {
             mTextViewShowPrice.setText("" + mChoosePay.PayName_Price(ApplePayPrice));
 
             String randomNumber = String.valueOf(new Date().getTime() % 3);
-            if (randomNumber.equals("0")) {
-                mTextViewShowCommodity.setText(mBlindBoxA);
-                mTextViewShowBoxType.setText(mToyCarPaperBox.createBox().Type());
-                mTextViewShowToyType.setText(mToyCarPaperBox.createToy().Type());
-            } else if (randomNumber.equals("1")) {
-                mTextViewShowCommodity.setText(mBlindBoxB);
-                mTextViewShowBoxType.setText(mRobotPlasticBox.createBox().Type());
-                mTextViewShowToyType.setText(mRobotPlasticBox.createToy().Type());
-            } else if (randomNumber.equals("2")) {
-                mTextViewShowCommodity.setText(mBlindBoxC);
-                mTextViewShowBoxType.setText(mDollGlassBox.createBox().Type());
-                mTextViewShowToyType.setText(mDollGlassBox.createToy().Type());
+            switch (randomNumber) {
+                case "0":
+                    mTextViewShowCommodity.setText(mBlindBoxA);
+                    mTextViewShowBoxType.setText(mToyCarPaperBox.createBox().Type());
+                    mTextViewShowToyType.setText(mToyCarPaperBox.createToy().Type());
+                    break;
+                case "1":
+                    mTextViewShowCommodity.setText(mBlindBoxB);
+                    mTextViewShowBoxType.setText(mRobotPlasticBox.createBox().Type());
+                    mTextViewShowToyType.setText(mRobotPlasticBox.createToy().Type());
+                    break;
+                case "2":
+                    mTextViewShowCommodity.setText(mBlindBoxC);
+                    mTextViewShowBoxType.setText(mDollGlassBox.createBox().Type());
+                    mTextViewShowToyType.setText(mDollGlassBox.createToy().Type());
+                    break;
             }
 
             mBlindBoxManageList.add(mBlindBoxA);

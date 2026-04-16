@@ -34,8 +34,8 @@ public class CommodityFactory {
             return "娃娃";
         }
     }
-    //Box
 
+    //Box
     private static class PaperBox extends Box {
         @Override
         public String Type() {
@@ -66,6 +66,38 @@ public class CommodityFactory {
     }
 
     //生產
+    public Toy createToy(String s) {
+        Toy mToy = null;
+        switch (s) {
+            case "ToyCar":
+                mToy = new ToyCar();
+                break;
+            case "Robot":
+                mToy = new Robot();
+                break;
+            case "Doll":
+                mToy = new Doll();
+                break;
+        }
+        return mToy;
+    }
+
+    public Box createBox(String s) {
+        Box mBox = null;
+        switch (s) {
+            case "Paper":
+                mBox = new PaperBox();
+                break;
+            case "Plastic":
+                mBox = new PlasticBox();
+                break;
+            case "Glass":
+                mBox = new GlassBox();
+                break;
+        }
+        return mBox;
+    }
+
     public abstract static class createBlindBox {
         public abstract Toy createToy();
 
