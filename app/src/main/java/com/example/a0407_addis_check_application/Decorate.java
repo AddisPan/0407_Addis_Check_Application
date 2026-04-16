@@ -7,7 +7,7 @@ public class Decorate {
         public abstract String Type();
     }
 
-    public static class ChrisTree extends Tree {
+    public static class ChrisMasTree extends Tree {
         @Override
         public String Type() {
             Log.d("Addis", "這是一個聖誕樹");
@@ -16,15 +16,15 @@ public class Decorate {
     }
 
     public abstract static class DecorateBase extends Tree {
-        Tree mTree = null;
+        protected Tree mTree = null;
 
         public DecorateBase(Tree tree) {
             mTree = tree;
         }
     }
 
-    public static class LumpChrisTree extends DecorateBase {
-        public LumpChrisTree(Tree tree) {
+    public static class LumpChrisMasTree extends DecorateBase {
+        public LumpChrisMasTree(Tree tree) {
             super(tree);
         }
 
@@ -36,8 +36,8 @@ public class Decorate {
         }
     }
 
-    public static class LumpBallChrisTree extends DecorateBase {
-        public LumpBallChrisTree(Tree tree) {
+    public static class LumpBallChrisMasTree extends DecorateBase {
+        public LumpBallChrisMasTree(Tree tree) {
             super(tree);
         }
 
