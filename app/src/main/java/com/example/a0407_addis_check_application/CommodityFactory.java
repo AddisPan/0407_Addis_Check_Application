@@ -1,9 +1,10 @@
 package com.example.a0407_addis_check_application;
 
 public class CommodityFactory {
-    public abstract static class Toy{
+    public abstract static class Toy {
         public abstract String Type();
     }
+
     public abstract static class Box {
         public abstract String Type();
     }
@@ -11,32 +12,29 @@ public class CommodityFactory {
     public abstract static class Bag {
         public abstract String Type();
     }
+
     //Toy
-    private static class ToyCar extends Toy{
+    private static class ToyCar extends Toy {
         @Override
         public String Type() {
             return "玩具車";
         }
     }
-    private static class Robot extends Toy{
+
+    private static class Robot extends Toy {
         @Override
         public String Type() {
             return "機器人";
         }
     }
-    private static class Doll extends Toy{
+
+    private static class Doll extends Toy {
         @Override
         public String Type() {
             return "娃娃";
         }
     }
     //Box
-    private static class BlindBox extends Box {
-        @Override
-        public String Type() {
-            return "盲盒";
-        }
-    }
 
     private static class PaperBox extends Box {
         @Override
@@ -58,6 +56,7 @@ public class CommodityFactory {
             return "玻璃盒";
         }
     }
+
     //Bag
     private static class PlasticBag extends Bag {
         @Override
@@ -65,38 +64,60 @@ public class CommodityFactory {
             return "塑膠袋";
         }
     }
+
     //生產
-    public static Toy createToy(String s){
-        Toy mToy = null;
-        if (s.equals("ToyCar")) {
-            mToy = new ToyCar();
-        } else if (s.equals("Robot")) {
-            mToy = new Robot();
-        } else if (s.equals("Doll")) {
-            mToy = new Doll();
-        }
-        return mToy;
+    public abstract static class createBlindBox {
+        public abstract Toy createToy();
+
+        public abstract Box createBox();
     }
-    public static Box createBox(String s) {
-        Box mBox = null;
-        if (s.equals("Paper")) {
-            mBox = new PaperBox();
-        } else if (s.equals("Plastic")) {
-            mBox = new PlasticBox();
-        } else if (s.equals("Glass")) {
-            mBox = new GlassBox();
+
+    public static class ToyCarPaperBox extends createBlindBox {
+        @Override
+        public Toy createToy() {
+            return new ToyCar();
         }
-        return mBox;
+
+        @Override
+        public Box createBox() {
+            return new PaperBox();
+        }
     }
+
+    public static class RobotPlasticBox extends createBlindBox {
+        @Override
+        public Toy createToy() {
+            return new Robot();
+        }
+
+        @Override
+        public Box createBox() {
+            return new PlasticBox();
+        }
+    }
+
+    public static class DollGlassBox extends createBlindBox {
+        @Override
+        public Toy createToy() {
+            return new Doll();
+        }
+
+        @Override
+        public Box createBox() {
+            return new GlassBox();
+        }
+    }
+
     public abstract static class createBoxBagFactory {
         public abstract Box createBox();
 
         public abstract Bag createBag();
     }
+
     public static class Store extends createBoxBagFactory {
         @Override
         public Box createBox() {
-            return new BlindBox();
+            return new PaperBox();
         }
 
         @Override

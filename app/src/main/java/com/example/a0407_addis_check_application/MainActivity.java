@@ -23,11 +23,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        // 使用工廠方法模式生產盲盒
-        //盲盒內容為下列隨機一種
-        //「紙盒裝的玩具車」
-        //「塑膠盒裝的機器人」
-        //「玻璃盒裝的娃娃」 開始 15:50  結束 16:00
+        // 使用抽象工廠模式，生產盲盒所需材料「玩具」、「玩具盒子」 開始 16:06  結束 16:23
         TextView mTextViewLinePay = findViewById(R.id.id_button_line_pay);
         TextView mTextViewApplePay = findViewById(R.id.id_button_apple_pay);
         TextView mTextViewShowPrice = findViewById(R.id.id_show_price);
@@ -36,11 +32,13 @@ public class MainActivity extends AppCompatActivity {
         TextView mTextViewShowToyType = findViewById(R.id.id_show_toy_type);
         TextView mTextViewShowBlindBoxManage = findViewById(R.id.id_show_blind_box_manage);
 
-        Log.d("Addis", String.valueOf(new Date().getTime() % 3));
-        // 工廠方法模式生產盲盒 隨機
-        String mBlindBoxA = CommodityFactory.createToy("ToyCar").Type() + " + " + CommodityFactory.createBox("Paper").Type();
-        String mBlindBoxB = CommodityFactory.createToy("Robot").Type() + " + " + CommodityFactory.createBox("Plastic").Type();
-        String mBlindBoxC = CommodityFactory.createToy("Doll").Type() + " + " + CommodityFactory.createBox("Glass").Type();
+        // 抽象工廠方法模式生產盲盒 隨機
+        CommodityFactory.ToyCarPaperBox mToyCarPaperBox = new CommodityFactory.ToyCarPaperBox();
+        CommodityFactory.RobotPlasticBox mRobotPlasticBox = new CommodityFactory.RobotPlasticBox();
+        CommodityFactory.DollGlassBox mDollGlassBox = new CommodityFactory.DollGlassBox();
+        String mBlindBoxA = mToyCarPaperBox.createToy().Type() + " + " + mToyCarPaperBox.createBox().Type();
+        String mBlindBoxB = mRobotPlasticBox.createToy().Type() + " + " + mRobotPlasticBox.createBox().Type();
+        String mBlindBoxC = mDollGlassBox.createToy().Type() + " + " + mDollGlassBox.createBox().Type();
 
         List<String> mBlindBoxManageList = new ArrayList<String>();
         double price = 100;
@@ -54,13 +52,19 @@ public class MainActivity extends AppCompatActivity {
             String randomNumber = String.valueOf(new Date().getTime() % 3);
             if (randomNumber.equals("0")) {
                 mTextViewShowCommodity.setText(mBlindBoxA);
+                mTextViewShowBoxType.setText(mToyCarPaperBox.createBox().Type());
+                mTextViewShowToyType.setText(mToyCarPaperBox.createToy().Type());
             } else if (randomNumber.equals("1")) {
                 mTextViewShowCommodity.setText(mBlindBoxB);
+                mTextViewShowBoxType.setText(mRobotPlasticBox.createBox().Type());
+                mTextViewShowToyType.setText(mRobotPlasticBox.createToy().Type());
             } else if (randomNumber.equals("2")) {
                 mTextViewShowCommodity.setText(mBlindBoxC);
+                mTextViewShowBoxType.setText(mDollGlassBox.createBox().Type());
+                mTextViewShowToyType.setText(mDollGlassBox.createToy().Type());
             }
 
-            mBlindBoxManageList.add(CommodityFactory.createToy("ToyCar").Type() + " + " + CommodityFactory.createBox("Paper").Type());
+            mBlindBoxManageList.add(mBlindBoxA);
             mTextViewShowBlindBoxManage.setText(mBlindBoxManageList.get(0));
         });
         // Apple Pay
@@ -71,18 +75,20 @@ public class MainActivity extends AppCompatActivity {
             String randomNumber = String.valueOf(new Date().getTime() % 3);
             if (randomNumber.equals("0")) {
                 mTextViewShowCommodity.setText(mBlindBoxA);
+                mTextViewShowBoxType.setText(mToyCarPaperBox.createBox().Type());
+                mTextViewShowToyType.setText(mToyCarPaperBox.createToy().Type());
             } else if (randomNumber.equals("1")) {
                 mTextViewShowCommodity.setText(mBlindBoxB);
+                mTextViewShowBoxType.setText(mRobotPlasticBox.createBox().Type());
+                mTextViewShowToyType.setText(mRobotPlasticBox.createToy().Type());
             } else if (randomNumber.equals("2")) {
                 mTextViewShowCommodity.setText(mBlindBoxC);
+                mTextViewShowBoxType.setText(mDollGlassBox.createBox().Type());
+                mTextViewShowToyType.setText(mDollGlassBox.createToy().Type());
             }
 
-            mBlindBoxManageList.add(CommodityFactory.createToy("Robot").Type() + " + " + CommodityFactory.createBox("Glass").Type());
+            mBlindBoxManageList.add(mBlindBoxA);
             mTextViewShowBlindBoxManage.setText(mBlindBoxManageList.get(0));
         });
-        // Show Box Type
-        mTextViewShowBoxType.setText(CommodityFactory.createBox("Paper").Type() + "\n" + CommodityFactory.createBox("Plastic").Type() + "\n" + CommodityFactory.createBox("Glass").Type());
-        // Show Toy Type
-        mTextViewShowToyType.setText(CommodityFactory.createToy("ToyCar").Type() + "\n" + CommodityFactory.createToy("Robot").Type() + "\n" + CommodityFactory.createToy("Doll").Type());
     }
 }
