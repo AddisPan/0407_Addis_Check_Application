@@ -16,6 +16,27 @@ public class CommodityFactory {
         }
     }
 
+    private static class PaperBox extends Box {
+        @Override
+        public String Type() {
+            return "紙盒";
+        }
+    }
+
+    private static class PlasticBox extends Box {
+        @Override
+        public String Type() {
+            return "塑膠盒";
+        }
+    }
+
+    private static class GlassBox extends Box {
+        @Override
+        public String Type() {
+            return "玻璃盒";
+        }
+    }
+
     private static class PlasticBag extends Bag {
         @Override
         public String Type() {
@@ -27,6 +48,18 @@ public class CommodityFactory {
         public abstract Box createBox();
 
         public abstract Bag createBag();
+    }
+
+    public static Box createBox(String s) {
+        Box mBox = null;
+        if (s.equals("Paper")) {
+            mBox = new PaperBox();
+        } else if (s.equals("Plastic")) {
+            mBox = new PlasticBox();
+        } else if (s.equals("Glass")) {
+            mBox = new GlassBox();
+        }
+        return mBox;
     }
 
     public static class Store extends createBoxBagFactory {
