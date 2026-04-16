@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        // 補上工廠模式(因為剛剛把它刪掉) 將隨機生產的地方變回工廠模式 開始 16:39  結束 16:43
+        // 使用策略模式，設計付款方式，顯示在「付款明細區塊」 開始 16:44  結束 16:45
         TextView mTextViewLinePay = findViewById(R.id.id_button_line_pay);
         TextView mTextViewApplePay = findViewById(R.id.id_button_apple_pay);
         TextView mTextViewShowPrice = findViewById(R.id.id_show_price);
@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         // Line Pay
         mTextViewLinePay.setOnClickListener(v -> {
             mChoosePay.choosePay(new PayStrategy.LinePay());
-            mTextViewShowPrice.setText("" + mChoosePay.PayName_Price(price));
+            mTextViewShowPrice.setText(" " + mChoosePay.PayName_Price(price));
 
             String randomNumber = String.valueOf(new Date().getTime() % 3);
             switch (randomNumber) {
@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
         // Apple Pay
         mTextViewApplePay.setOnClickListener(v -> {
             mChoosePay.choosePay(new PayStrategy.ApplePay());
-            mTextViewShowPrice.setText("" + mChoosePay.PayName_Price(ApplePayPrice));
+            mTextViewShowPrice.setText(" " + mChoosePay.PayName_Price(ApplePayPrice));
 
             String randomNumber = String.valueOf(new Date().getTime() % 3);
             switch (randomNumber) {
