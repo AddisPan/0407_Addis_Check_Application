@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        // 使用裝飾者模式，在盲盒上裝飾塑膠袋，並將裝飾後的內容顯示在「獲得商品區塊」先設計出裝飾者的雛形 因為裝飾者需要盲盒管理員的盲盒 開始 17:21  結束 17:32
+        // 生產完的盲盒使用Singleton模式看會印出甚麼東西 沒有成功 盲盒管理元件最後是用觀察者模式的Subject代表 17:40  結束 17:44
         TextView mTextViewLinePay = findViewById(R.id.id_button_line_pay);
         TextView mTextViewApplePay = findViewById(R.id.id_button_apple_pay);
         TextView mTextViewShowPrice = findViewById(R.id.id_show_price);
