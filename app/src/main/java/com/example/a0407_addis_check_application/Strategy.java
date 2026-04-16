@@ -3,10 +3,11 @@ package com.example.a0407_addis_check_application;
 import android.util.Log;
 
 public class Strategy {
-    public abstract static class Pay{
+    public abstract static class Pay {
         public abstract String Price(int price);
     }
-    public static class LinePay extends Pay{
+
+    public static class LinePay extends Pay {
         @Override
         public String Price(int price) {
             price = 100;
@@ -14,7 +15,8 @@ public class Strategy {
             return "用 LinePay 付了 " + price;
         }
     }
-    public static class ApplePay extends Pay{
+
+    public static class ApplePay extends Pay {
         @Override
         public String Price(int price) {
             price = 100;

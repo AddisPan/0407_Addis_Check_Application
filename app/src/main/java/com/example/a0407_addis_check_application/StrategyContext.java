@@ -1,7 +1,7 @@
 package com.example.a0407_addis_check_application;
 
 public class StrategyContext {
-    Strategy.Pay mPay = null;
+    protected Strategy.Pay mPay = null;
 
     public void chooseStrategy(Strategy.Pay pay) {
         mPay = pay;
