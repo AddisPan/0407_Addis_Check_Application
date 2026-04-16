@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        // 畫面上有一顆「使用LinePay購買盲盒」按鈕，點擊使用指定付款方式獲得商品，並將商品放入盲盒管理元件 開始 15:15  結束 15:30
+        // 畫面上有一顆「使用ApplePay購買盲盒」按鈕，點擊使用指定付款方式獲得商品，並將商品放入盲盒管理元件 開始 15:35  結束 15:39
         TextView mTextViewLinePay = findViewById(R.id.id_button_line_pay);
         TextView mTextViewApplePay = findViewById(R.id.id_button_apple_pay);
         TextView mTextViewShowPrice = findViewById(R.id.id_show_price);
@@ -49,6 +49,10 @@ public class MainActivity extends AppCompatActivity {
         mTextViewApplePay.setOnClickListener(v -> {
             mChoosePay.choosePay(new PayStrategy.ApplePay());
             mTextViewShowPrice.setText("" + mChoosePay.PayName_Price(ApplePayPrice));
+            CommodityFactory.Store mStore = new CommodityFactory.Store();
+            mTextViewShowCommodity.setText(CommodityFactory.createToy("Robot").Type() + " + " + CommodityFactory.createBox("Glass").Type() + " + " + mStore.createBag().Type());
+            mBlindBoxManageList.add(CommodityFactory.createToy("Robot").Type() + " + " + CommodityFactory.createBox("Glass").Type());
+            mTextViewShowBlindBoxManage.setText(mBlindBoxManageList.get(0));
         });
         // Show Box Type
         mTextViewShowBoxType.setText(CommodityFactory.createBox("Paper").Type() + "\n" + CommodityFactory.createBox("Plastic").Type() + "\n" + CommodityFactory.createBox("Glass").Type());
