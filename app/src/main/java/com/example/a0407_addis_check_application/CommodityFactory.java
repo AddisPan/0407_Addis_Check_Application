@@ -12,14 +12,14 @@ public class CommodityFactory {
     private static class BlindBox extends Box {
         @Override
         public String Type() {
-            return "這是盲盒";
+            return "盲盒";
         }
     }
 
     private static class PlasticBag extends Bag {
         @Override
         public String Type() {
-            return "這是塑膠袋";
+            return "塑膠袋";
         }
     }
 

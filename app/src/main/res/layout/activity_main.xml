@@ -33,4 +33,10 @@
             android:gravity="center"
             android:text="Apple Pay" />
     </LinearLayout>
+    <TextView
+        android:id="@+id/id_show_commodity"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center">
+    </TextView>
 </LinearLayout>

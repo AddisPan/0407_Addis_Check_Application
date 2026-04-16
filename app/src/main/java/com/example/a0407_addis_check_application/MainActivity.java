@@ -15,10 +15,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        // 畫面上有一個付款明細區塊，用來顯示付款方式及消費金額，顯示再Activity上(點選不同得付款方式會有金額顯示) 開始 14:24  結束 14:35
+        // 畫面上有一個獲得商品區塊，用來顯示付款後獲得的商品 開始 14:35  結束 14:42
         TextView mTextViewLinePay = findViewById(R.id.id_button_line_pay);
         TextView mTextViewApplePay = findViewById(R.id.id_button_apple_pay);
         TextView mTextViewShowPrice = findViewById(R.id.id_show_price);
+        TextView mTextViewShowCommodity = findViewById(R.id.id_show_commodity);
 
         double price = 100;
         double ApplePayPrice = price * .8;
@@ -32,5 +33,7 @@ public class MainActivity extends AppCompatActivity {
             mChoosePay.choosePay(new PayStrategy.ApplePay());
             mTextViewShowPrice.setText("" + mChoosePay.PayName_Price(ApplePayPrice));
         });
+        CommodityFactory.Store mStore = new CommodityFactory.Store();
+        mTextViewShowCommodity.setText(mStore.createBox().Type() + " + " + mStore.createBag().Type());
     }
 }
