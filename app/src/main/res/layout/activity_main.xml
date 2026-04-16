@@ -44,17 +44,31 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:orientation="horizontal">
+
         <TextView
             android:id="@+id/id_show_box_type"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:gravity="center"/>
+            android:gravity="center" />
+
         <TextView
             android:id="@+id/id_show_toy_type"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:gravity="center"/>
+            android:gravity="center" />
     </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="盲盒管理元件" />
+
+    <TextView
+        android:id="@+id/id_show_blind_box_manage"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:gravity="center" />
 </LinearLayout>
