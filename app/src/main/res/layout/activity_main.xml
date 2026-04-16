@@ -2,36 +2,36 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <TextView
+        android:id="@+id/id_textview_time_button"
         android:layout_width="80dp"
         android:layout_height="100dp"
         android:layout_marginTop="50dp"
         android:background="@android:drawable/btn_default"
-        android:text="顯示時間"
-        android:id="@+id/id_textview_time_button">
-    </TextView>
+        android:text="顯示時間" />
+
     <TextView
+        android:id="@+id/id_textview_time_show"
         android:layout_width="80dp"
         android:layout_height="100dp"
         android:layout_marginTop="50dp"
         android:background="@android:drawable/btn_default"
-        android:text=""
-        android:id="@+id/id_textview_time_show">
-    </TextView>
+        android:text="" />
+
     <TextView
+        android:id="@+id/id_textview_observerA"
         android:layout_width="80dp"
         android:layout_height="100dp"
         android:layout_marginTop="50dp"
         android:background="@android:drawable/btn_default"
-        android:text=""
-        android:id="@+id/id_textview_observerA">
-    </TextView>
+        android:text="" />
+
     <TextView
+        android:id="@+id/id_textview_obseverB"
         android:layout_width="80dp"
         android:layout_height="100dp"
         android:layout_marginTop="50dp"
         android:background="@android:drawable/btn_default"
-        android:text=""
-        android:id="@+id/id_textview_obseverB">
-    </TextView>
+        android:text="" />
 </LinearLayout>

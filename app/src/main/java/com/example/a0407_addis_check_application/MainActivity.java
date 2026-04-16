@@ -17,13 +17,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        // 先做觀察者模式(設定layout並顯示在Activity上) 17:50 完成 18:00
+        // Reformat 13:42 完成 13:46
         TextView mTextViewTimeButton = findViewById(R.id.id_textview_time_button);
         TextView mTextViewTimeShow = findViewById(R.id.id_textview_time_show);
         TextView mTextViewObserverA = findViewById(R.id.id_textview_observerA);
         TextView mTextViewObserverB = findViewById(R.id.id_textview_obseverB);
-        mTextViewTimeButton.setOnClickListener(v->{
-            mTextViewTimeShow.setText(String.valueOf( new Date().getTime()));
+        mTextViewTimeButton.setOnClickListener(v -> {
+            mTextViewTimeShow.setText(String.valueOf(new Date().getTime()));
         });
         Observer.Subject mSubject = new Observer.Subject();
         Observer mObserverA = new Observer();

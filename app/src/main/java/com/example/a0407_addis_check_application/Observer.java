@@ -8,7 +8,7 @@ import java.util.ListIterator;
 
 public class Observer {
     public static class Subject {
-        private static List<Observer> mObservers = new ArrayList<Observer>();
+        private static final List<Observer> mObservers = new ArrayList<Observer>();
 
         public void add(Observer observer) {
             mObservers.add(observer);
@@ -20,6 +20,7 @@ public class Observer {
             }
         }
     }
+
     public static String update() {
         Log.d("Addis", "更新");
         return "收到更新";
