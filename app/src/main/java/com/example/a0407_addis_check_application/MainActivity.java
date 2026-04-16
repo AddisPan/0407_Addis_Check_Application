@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        // 生產完的盲盒使用Singleton模式看會印出甚麼東西 沒有成功 盲盒管理元件最後是用觀察者模式的Subject代表 17:40  結束 17:44
+        // 最後檢查是否都有 Reformat 加上修飾符 以及畫面是否可以執行(沒有特別去不同的螢幕大小嘗試) 開始 17:45  結束 17:47
         TextView mTextViewLinePay = findViewById(R.id.id_button_line_pay);
         TextView mTextViewApplePay = findViewById(R.id.id_button_apple_pay);
         TextView mTextViewShowPrice = findViewById(R.id.id_show_price);
